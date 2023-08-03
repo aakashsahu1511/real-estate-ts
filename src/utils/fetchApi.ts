@@ -28,9 +28,6 @@ export const fetchRentApi = async () => {
 
   const response = await fetch('https://bayut.p.rapidapi.com/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6',{
     headers: headers,
-    next :{
-      revalidate : 100000,
-    }
   });
   console.log('sanu');
 
@@ -46,9 +43,6 @@ export const fetchSaleApi = async () => {
 
   const response = await fetch('https://bayut.p.rapidapi.com/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6',{
     headers: headers,
-    next :{
-      revalidate : 100000,
-    }
   });
 
   const result = await response.json();
